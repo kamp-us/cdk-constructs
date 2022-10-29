@@ -1,8 +1,9 @@
 {
-  "name": "cdk-constructs",
+  "name": "@kampus/cdk-constructs",
+  "description": "cdk constructs that are used to deploy kamp.us applications on aws",
   "repository": {
     "type": "git",
-    "url": "https://github.com/usirin/cdk-constructs.git"
+    "url": "https://github.com/kamp-us/cdk-constructs.git"
   },
   "scripts": {
     "build": "npx projen build",
@@ -29,9 +30,9 @@
     "projen": "npx projen"
   },
   "author": {
-    "name": "usirin",
-    "email": "umutsirin1@gmail.com",
-    "organization": false
+    "name": "kampus",
+    "email": "infra@kamp.us",
+    "organization": true
   },
   "devDependencies": {
     "@types/jest": "^27",
@@ -41,9 +42,11 @@
     "aws-cdk-lib": "2.1.0",
     "constructs": "10.0.5",
     "eslint": "^8",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-import-resolver-node": "^0.3.6",
     "eslint-import-resolver-typescript": "^3.5.2",
     "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "jest": "^27",
     "jest-junit": "^13",
     "jsii": "^1.70.0",
@@ -52,9 +55,11 @@
     "jsii-pacmak": "^1.70.0",
     "json-schema": "^0.4.0",
     "npm-check-updates": "^16",
+    "prettier": "^2.7.1",
     "projen": "^0.65.4",
     "standard-version": "^9",
     "ts-jest": "^27",
+    "ts-node": "^10.9.1",
     "typescript": "^4.8.4"
   },
   "peerDependencies": {
@@ -66,6 +71,9 @@
   ],
   "main": "lib/index.js",
   "license": "Apache-2.0",
+  "publishConfig": {
+    "access": "public"
+  },
   "version": "0.0.0",
   "jest": {
     "testMatch": [
@@ -117,7 +125,7 @@
       "rootDir": "src"
     }
   },
-  "resolutions": {
+  "overrides": {
     "@types/responselike": "1.0.0",
     "got": "12.3.1",
     "@types/prettier": "2.6.0"
