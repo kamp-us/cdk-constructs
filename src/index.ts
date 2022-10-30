@@ -1,5 +1,2 @@
-export class Hello {
-  public sayHello() {
-    return 'hello, world!';
-  }
-}
+export * from './cross-account-subdomain';
+export * from './cross-account-delegation-role';
