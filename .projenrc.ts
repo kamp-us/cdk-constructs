@@ -15,6 +15,9 @@ const project = new awscdk.AwsCdkConstructLibrary({
   npmAccess: NpmAccess.PUBLIC,
   packageManager: NodePackageManager.NPM,
   prerelease: 'beta',
+
+  minNodeVersion: '16.14.2',
+
   prettier: true,
   prettierOptions: {
     settings: {
