@@ -36,7 +36,7 @@
   },
   "devDependencies": {
     "@types/jest": "^27",
-    "@types/node": "^14",
+    "@types/node": "^16",
     "@typescript-eslint/eslint-plugin": "^5",
     "@typescript-eslint/parser": "^5",
     "aws-cdk-lib": "2.1.0",
@@ -51,12 +51,12 @@
     "jest-junit": "^13",
     "jsii": "^1.70.0",
     "jsii-diff": "^1.70.0",
-    "jsii-docgen": "^7.0.132",
+    "jsii-docgen": "^7.0.136",
     "jsii-pacmak": "^1.70.0",
     "json-schema": "^0.4.0",
     "npm-check-updates": "^16",
     "prettier": "^2.7.1",
-    "projen": "^0.65.4",
+    "projen": "^0.65.7",
     "standard-version": "^9",
     "ts-jest": "^27",
     "ts-node": "^10.9.1",
@@ -69,6 +69,9 @@
   "keywords": [
     "cdk"
   ],
+  "engines": {
+    "node": ">= 16.14.2"
+  },
   "main": "lib/index.js",
   "license": "Apache-2.0",
   "publishConfig": {
