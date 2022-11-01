@@ -10,10 +10,8 @@ import { Construct } from 'constructs';
 import { ICrossAccountDelegationRole } from './cross-account-delegation-role';
 
 export interface CrossAccountSubdomainProps {
-  readonly organizationAccountID: string;
   readonly subdomain: string;
   readonly rootDomain: string;
-
   readonly delegationRole: ICrossAccountDelegationRole;
 }
 
