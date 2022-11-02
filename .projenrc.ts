@@ -1,5 +1,5 @@
 import { awscdk } from 'projen';
-import { NpmAccess, NodePackageManager } from 'projen/lib/javascript';
+import { NpmAccess } from 'projen/lib/javascript';
 
 const project = new awscdk.AwsCdkConstructLibrary({
   author: 'kampus',
@@ -13,7 +13,6 @@ const project = new awscdk.AwsCdkConstructLibrary({
     'cdk constructs that are used to deploy kamp.us applications on aws',
   packageName: '@kampus/cdk-constructs',
   npmAccess: NpmAccess.PUBLIC,
-  packageManager: NodePackageManager.NPM,
   prerelease: 'beta',
 
   minNodeVersion: '16.14.2',
