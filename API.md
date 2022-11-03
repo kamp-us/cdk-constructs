@@ -206,7 +206,7 @@ Any object.
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@kampus/cdk-constructs.CrossAccountSubdomain.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#@kampus/cdk-constructs.CrossAccountSubdomain.property.certificate">certificate</a></code> | <code>aws-cdk-lib.aws_certificatemanager.Certificate</code> | *No description.* |
+| <code><a href="#@kampus/cdk-constructs.CrossAccountSubdomain.property.certificate">certificate</a></code> | <code>aws-cdk-lib.aws_certificatemanager.ICertificate</code> | *No description.* |
 | <code><a href="#@kampus/cdk-constructs.CrossAccountSubdomain.property.hostedZone">hostedZone</a></code> | <code>aws-cdk-lib.aws_route53.PublicHostedZone</code> | *No description.* |
 
 ---
@@ -226,10 +226,10 @@ The tree node.
 ##### `certificate`<sup>Required</sup> <a name="certificate" id="@kampus/cdk-constructs.CrossAccountSubdomain.property.certificate"></a>
 
 ```typescript
-public readonly certificate: Certificate;
+public readonly certificate: ICertificate;
 ```
 
-- *Type:* aws-cdk-lib.aws_certificatemanager.Certificate
+- *Type:* aws-cdk-lib.aws_certificatemanager.ICertificate
 
 ---
 
@@ -302,6 +302,7 @@ const crossAccountSubdomainProps: CrossAccountSubdomainProps = { ... }
 | <code><a href="#@kampus/cdk-constructs.CrossAccountSubdomainProps.property.delegationRole">delegationRole</a></code> | <code><a href="#@kampus/cdk-constructs.ICrossAccountDelegationRole">ICrossAccountDelegationRole</a></code> | *No description.* |
 | <code><a href="#@kampus/cdk-constructs.CrossAccountSubdomainProps.property.rootDomain">rootDomain</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@kampus/cdk-constructs.CrossAccountSubdomainProps.property.subdomain">subdomain</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@kampus/cdk-constructs.CrossAccountSubdomainProps.property.certificateRegion">certificateRegion</a></code> | <code>string</code> | *No description.* |
 
 ---
 
@@ -329,6 +330,16 @@ public readonly rootDomain: string;
 
 ```typescript
 public readonly subdomain: string;
+```
+
+- *Type:* string
+
+---
+
+##### `certificateRegion`<sup>Optional</sup> <a name="certificateRegion" id="@kampus/cdk-constructs.CrossAccountSubdomainProps.property.certificateRegion"></a>
+
+```typescript
+public readonly certificateRegion: string;
 ```
 
 - *Type:* string
