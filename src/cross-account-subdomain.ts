@@ -1,6 +1,6 @@
 import {
-  CertificateValidation,
-  Certificate,
+  ICertificate,
+  DnsValidatedCertificate,
 } from 'aws-cdk-lib/aws-certificatemanager';
 import {
   PublicHostedZone,
@@ -13,11 +13,13 @@ export interface CrossAccountSubdomainProps {
   readonly subdomain: string;
   readonly rootDomain: string;
   readonly delegationRole: ICrossAccountDelegationRole;
+
+  readonly certificateRegion?: string;
 }
 
 export class CrossAccountSubdomain extends Construct {
   public readonly hostedZone: PublicHostedZone;
-  public readonly certificate: Certificate;
+  public readonly certificate: ICertificate;
 
   constructor(scope: Construct, id: string, props: CrossAccountSubdomainProps) {
     super(scope, id);
@@ -38,9 +40,10 @@ export class CrossAccountSubdomain extends Construct {
       }
     );
 
-    this.certificate = new Certificate(this, 'DomainCertificate', {
-      domainName: domainName,
-      validation: CertificateValidation.fromDns(this.hostedZone),
+    this.certificate = new DnsValidatedCertificate(this, 'DomainCertificate', {
+      domainName,
+      hostedZone: this.hostedZone,
+      region: props.certificateRegion,
     });
   }
 }
